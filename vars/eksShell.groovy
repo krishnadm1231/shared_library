@@ -32,7 +32,7 @@ environment {
                 }    
         }
         stage('DEPLOY IMAGE') {
-		agent{label 'eks'}
+		agent{label 'kubernetes'}
 		steps {
 			sh 'kubectl set image deploy webapp-deployment nodejs="$registry:$dockerTag" --record'
 		}
